@@ -3,36 +3,35 @@
 
 var db = require('./models');
 
-var Profile = require('./models/profile');
+// var Careers = require('.models/careers');
 
-var mishaLeClair = new Profile({
-  name: "Misha LeClair",
-  githubLink: "https://github.com/sfnewzgirl",
-  githubProfileImage: "https://avatars1.githubusercontent.com/u/19892743?v=3&s=460",
-  personalSiteLink: "https://sfnewzgirl.github.io/",
-  currentCity: "Concord",
-  pets: "1 fish"
-});
-
-mishaLeClair.save(function(err, Profile){
-  if(err) {return console.log(err);}
-  console.log("saved profile: ", Profile);
-});
-
-var Career = require('.models/careers');
-
-var career_list = [
+var careers_list = [
   {
-    title: String,
-    company: String,
-    accomplishment: String
+    title: "title",
+    company: "company",
+    accomplishment: "accomplishment"
   },
   {
-    title: String,
-    company: String,
-    accomplishment: String
-},
+    title: "title",
+    company: "company",
+    accomplishment: "accomplishment"
+  }
 ];
+
+db.Careers.remove({}, function(err, careers){
+  if(err) {
+    console.log('Error occurred in remove', err);
+  } else {
+    console.log('removed all careers');
+
+    // create new records
+    db.Careers.create(careers_list, function(err, careers){
+      if (err) { return console.log('err', err); }
+      console.log("created", careers.length, "careers");
+      process.exit();
+    });
+  }
+});
 // var new_campsite = {description: "Sharp rocks. Middle of nowhere."}
 
 // db.Campsite.create(new_campsite, function(err, campsite){

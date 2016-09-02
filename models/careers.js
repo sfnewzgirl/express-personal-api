@@ -1,11 +1,11 @@
 var mongoose = require('mongoose'),
   Schema = mongoose.Schema;
 
-var CareerSchema = new Schema({
+var CareersSchema = new Schema({
   title: String,
   company: String,
   accomplishment: String,
 });
 
-var Career = mongoose.model('Career', CareerSchema);
-module.exports = Career;
+var Careers = mongoose.model('Careers', CareersSchema);
+module.exports = Careers;

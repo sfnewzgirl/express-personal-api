@@ -38,16 +38,20 @@ app.get('/', function homepage(req, res) {
 });
 
 app.get('/api/profile', function (req, res) {
-  db.Profile.find(function(err, books){
-    if (err) { return console.log("index error: " + err); }
-    res.json(books);
+    res.json({
+        name: "Misha LeClair",
+        githubLink: "https://github.com/sfnewzgirl",
+        githubProfileImage: "https://avatars1.githubusercontent.com/u/19892743?v=3&s=460",
+        personalSiteLink: "https://sfnewzgirl.github.io/",
+        currentCity: "Concord",
+        pets: "1 fish"
+    });
   });
-});
 
 app.get('/api/careers', function (req, res) {
-  db.Careers.find(function(err, books){
+  db.Careers.find(function(err, careers){
     if (err) { return console.log("index error: " + err); }
-    res.json(books);
+    res.json(careers);
   });
 });
 /*
