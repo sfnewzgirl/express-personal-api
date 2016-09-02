@@ -19,7 +19,23 @@ app.use(function(req, res, next) {
  * DATABASE *
  ************/
 
-// var db = require('./models');
+var db = require('./models');
+
+var Profile = require('./models/profile');
+
+var mishaLeClair = new Profile({
+  name: "Misha LeClair",
+  githubLink: "https://github.com/sfnewzgirl",
+  githubProfileImage: "https://avatars1.githubusercontent.com/u/19892743?v=3&s=460",
+  personalSiteLink: "https://sfnewzgirl.github.io/",
+  currentCity: "Concord",
+  pets: "1 fish"
+});
+
+mishaLeClair.save(function(err, Profile){
+  if(err) {return console.log(err);}
+  console.log("saved profile: ", Profile);
+});
 
 /**********
  * ROUTES *
@@ -37,6 +53,11 @@ app.get('/', function homepage(req, res) {
   res.sendFile(__dirname + '/views/index.html');
 });
 
+app.get('/api/profile', function (req, res) {
+  Profile.find(function handleProfile(err, profile) {
+    res.json(profile);
+  });
+});
 
 /*
  * JSON API Endpoints
@@ -51,8 +72,8 @@ app.get('/api', function api_index(req, res) {
     baseUrl: "https://afternoon-plains-79332.herokuapp.com/",
     endpoints: [
       {method: "GET", path: "/api", description: "Describes all available endpoints"},
-      {method: "GET", path: "/api/profile", description: "Profile"},
-      {method: "POST", path: "/api/careers", description: "Careers"}
+      {method: "GET", path: "/api/profile", description: "Includes profile information"},
+      {method: "POST", path: "/api/careers", description: "Includes information about past professions/semi-professions"}
     ]
   })
 });
