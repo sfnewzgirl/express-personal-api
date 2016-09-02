@@ -53,13 +53,6 @@ app.get('/', function homepage(req, res) {
   res.sendFile(__dirname + '/views/index.html');
 });
 
-//displays profile info at endpoint
-// app.get('/api/profile', function (req, res) {
-//   Profile.find(function handleProfile(err, profile) {
-//     res.json(profile);
-//   });
-// });
-
 /*
  * JSON API Endpoints
  */
