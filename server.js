@@ -37,6 +37,7 @@ app.get('/', function homepage(req, res) {
   res.sendFile(__dirname + '/views/index.html');
 });
 
+//gets profile
 app.get('/api/profile', function (req, res) {
     res.json({
         name: "Misha LeClair",
@@ -48,12 +49,22 @@ app.get('/api/profile', function (req, res) {
     });
   });
 
+//gets careers
 app.get('/api/careers', function (req, res) {
   db.Careers.find(function(err, careers){
     if (err) { return console.log("index error: " + err); }
     res.json(careers);
   });
 });
+
+//GET /api/careers/:id
+
+//POST api/careers
+
+//PUT /api/careers/:is
+
+//DELETE /api/careers/:id
+
 /*
  * JSON API Endpoints
  */
@@ -66,9 +77,9 @@ app.get('/api', function api_index(req, res) {
     documentationUrl: "https://github.com/sfnewzgirl/express-personal-api/blob/master/README.md",
     baseUrl: "https://afternoon-plains-79332.herokuapp.com/",
     endpoints: [
-      {method: "GET", path: "/api", description: "Describes all available endpoints"},
-      {method: "GET", path: "/api/profile", description: "Includes profile information"},
-      {method: "POST", path: "/api/careers", description: "Includes information about past professions/semi-professions"}
+      {method: "GET", path: "/api", description: "Homepage"},
+      {method: "GET", path: "/api/profile", description: "profile information"},
+      {method: "POST", path: "/api/careers", description: "past professions/careers"}
     ]
   })
 });
