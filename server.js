@@ -22,7 +22,7 @@ app.use(function(req, res, next) {
 var db = require('./models');
 
 // var Profile = require('./models/profile');
-// 
+//
 // var mishaLeClair = new Profile({
 //   name: "Misha LeClair",
 //   githubLink: "https://github.com/sfnewzgirl",
@@ -32,10 +32,10 @@ var db = require('./models');
 //   pets: "1 fish"
 // });
 
-mishaLeClair.save(function(err, Profile){
-  if(err) {return console.log(err);}
-  console.log("saved profile: ", Profile);
-});
+// mishaLeClair.save(function(err, Profile){
+//   if(err) {return console.log(err);}
+//   console.log("saved profile: ", Profile);
+// });
 
 /**********
  * ROUTES *
