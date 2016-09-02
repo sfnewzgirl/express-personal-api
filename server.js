@@ -78,8 +78,12 @@ app.get('/api', function api_index(req, res) {
     baseUrl: "https://afternoon-plains-79332.herokuapp.com/",
     endpoints: [
       {method: "GET", path: "/api", description: "Homepage"},
-      {method: "GET", path: "/api/profile", description: "profile information"},
-      {method: "POST", path: "/api/careers", description: "past professions/careers"}
+      {method: "GET", path: "/api/profile", description: "my profile information"},
+      {method: "GET", path: "/api/careers", description: "lists past careers"},
+      {method: "GET", path: "/api/careers/:id", description: "lists one career"},
+      {method: "POST", path: "/api/careers/", description: "adds one careers"},
+      {method: "PUT/PATCH", path: "/api/careers/:id", description: "updates one career"},
+      {method: "DELETE", path: "api/careers/:id", description: "deletes one career"}
     ]
   })
 });
