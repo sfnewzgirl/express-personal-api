@@ -50,50 +50,50 @@ app.get('/api/profile', function (req, res) {
 });
 
 //list careers
-// app.get('/api/careers', function (req, res) {
-//   db.Career.find(function (err, careers){
-//     if (err) {return console.log(err);}
-//     res.json(careers);
-//   });
-// });
+app.get('/api/careers', function (req, res) {
+  db.Career.find(function (err, careers){
+    if (err) {return console.log(err);}
+    res.json(careers);
+  });
+});
 
 //list one career
-// app.get('/api/careers/:id', function (req, res) {
-//   db.Career.findOne({_id: req.params.id}, function(err, data) {
-//     if (err) {return console.log(err);}
-//     res.json(data);
-//   });
-// });
+app.get('/api/careers/:id', function (req, res) {
+  db.Career.findOne({_id: req.params.id}, function(err, data) {
+    if (err) {return console.log(err);}
+    res.json(data);
+  });
+});
 
 //adds one career
-// app.post('/api/careers', function (req, res) {
-//   var newCareer = new db.Career(req.body);
-//   newCareer.save(function (err, savedCareer) {
-//     if (err) {return console.log(err);}
-//     res.json(savedCareer);
-//   });
-// });
+app.post('/api/careers', function (req, res) {
+  var newCareer = new db.Career(req.body);
+  newCareer.save(function (err, savedCareer) {
+    if (err) {return console.log(err);}
+    res.json(savedCareer);
+  });
+});
 
 //updates one career
-// app.put('/api/careers/:id', function (req, res) {
-//   db.Career.findOne({_id: req.params.id}, function (err, selectedCareer) {
-//     selectedCareer.jobTitle = req.body.jobTitle,
-//     selectedCareer.company = req.body.company,
-//     selectedCareer.accomplishment = req.body.accomplishment
-//     selectedCareer.save(function (err, savedUpdate) {
-//       if (err) {return console.console.log(err);}
-//       res.json(savedUpdate);
-//     });
-//   });
-// });
+app.put('/api/careers/:id', function (req, res) {
+  db.Career.findOne({_id: req.params.id}, function (err, selectedCareer) {
+    selectedCareer.jobTitle = req.body.jobTitle,
+    selectedCareer.company = req.body.company,
+    selectedCareer.accomplishment = req.body.accomplishment
+    selectedCareer.save(function (err, savedUpdate) {
+      if (err) {return console.console.log(err);}
+      res.json(savedUpdate);
+    });
+  });
+});
 
 //deletes one career
-// app.delete('/api/careers/:id', function (req, res) {
-//   db.Career.findOneAndRemove({_id: req.params.id}, function (err, deletedCareer) {
-//     if (err) {return console.log(err);}
-//     res.json(deletedCareer);
-//   });
-// });
+app.delete('/api/careers/:id', function (req, res) {
+  db.Career.findOneAndRemove({_id: req.params.id}, function (err, deletedCareer) {
+    if (err) {return console.log(err);}
+    res.json(deletedCareer);
+  });
+});
 
 /*
  * JSON API Endpoints
