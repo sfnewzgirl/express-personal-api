@@ -47,23 +47,53 @@ app.get('/api/profile', function (req, res) {
         currentCity: "Concord",
         pets: "1 fish"
     });
-  });
+});
 
-//gets careers
+//lists past careers
 app.get('/api/careers', function (req, res) {
-  db.Careers.find(function(err, careers){
-    if (err) { return console.log("index error: " + err); }
+  db.Career.find(function(err, careers){
+    if (err) { return console.log(err); }
     res.json(careers);
   });
 });
 
-//GET /api/careers/:id
+//list one career
+app.get('/api/careers/:id', function (req, res) {
+  db.Career.findOne({_id: req.params.id}, function(err, data) {
+    if (err) {return console.log(err);}
+    res.json(data);
+  });
+});
 
-//POST api/careers
+//adds one career
+app.post('/api/careers', function (req, res) {
+  var newCareer = new db.Career(req.body);
+  newCareer.save(function handlenNewCareer(err, savedCareer) {
+    if (err) {return console.log(err);}
+    res.json(savedCareer);
+  });
+});
 
-//PUT /api/careers/:is
+//updates one career
+app.put('/api/careers/:id', function (req, res) {
+  db.Career.findOne({_id: req.params.id}, function updatedCareer(err, selectedCareer) {
+    selectedCareer.jobTitle = req.body.jobTitle,
+    selectedCareer.company = req.body.company,
+    selectedCareer.accomplishment = req.body.accomplishment
+    selectedCareer.save(function (err, savedUpdate) {
+      if (err) {return console.console.log(err);}
+      res.json(savedUpdate);
+    });
+  });
+});
 
-//DELETE /api/careers/:id
+//deletes one career
+app.delete('/api/careers/:id', function (req, res) {
+  db.Career.findOneAndRemove({_id: req.params.id}, function (err, deletedCareer) {
+    if (err) {return console.log(err);}
+    res.json(deletedCareer);
+  });
+});
 
 /*
  * JSON API Endpoints
@@ -81,7 +111,7 @@ app.get('/api', function api_index(req, res) {
       {method: "GET", path: "/api/profile", description: "my profile information"},
       {method: "GET", path: "/api/careers", description: "lists past careers"},
       {method: "GET", path: "/api/careers/:id", description: "lists one career"},
-      {method: "POST", path: "/api/careers/", description: "adds one careers"},
+      {method: "POST", path: "/api/careers", description: "adds one career"},
       {method: "PUT/PATCH", path: "/api/careers/:id", description: "updates one career"},
       {method: "DELETE", path: "api/careers/:id", description: "deletes one career"}
     ]

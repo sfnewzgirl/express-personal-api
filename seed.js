@@ -2,14 +2,14 @@ var db = require('./models');
 
 var careers_list = [
   {
-    title: "title",
-    company: "company",
-    accomplishment: "accomplishment"
+    jobTitle: "job1",
+    company: "company1",
+    accomplishment: "accomplishment1"
   },
   {
-    title: "title",
-    company: "company",
-    accomplishment: "accomplishment"
+    jobTitle: "job2",
+    company: "company2",
+    accomplishment: "accomplishment2"
   }
 ];
 
