@@ -1,9 +1,15 @@
 console.log("Sanity Check: JS is working!");
-var template
+var templateProfile,
+  careerProfile;
 
 $(document).ready(function(){
   var profileSource = $('#profile-template').html();
-  template = Handlebars.compile(profileSource);
+  templateProfile = Handlebars.compile(profileSource);
+
+  var careerSource = $('#career-template').html();
+  careerProfile = Handlebars.compile(careerSource);
+
+
   $.ajax({
         method:'GET',
         url: '/api/profile',
@@ -12,8 +18,7 @@ $(document).ready(function(){
         error: handleError
       });
 
-  var careerSource = $('#career-template').html();
-  template = Handlebars.compile(careerSource);
+
   $.ajax({
     method: 'GET',
     url: '/api/careers',
@@ -26,7 +31,7 @@ $(document).ready(function(){
 
 function onSuccess(json) {
 //  $("#profileItem").empty();
-  var profileHtml = template({
+  var profileHtml = templateProfile({
     name: json.name,
     githubLink: json.githubLink,
     githubProfileImage: json.githubProfileImage,
@@ -38,7 +43,7 @@ function onSuccess(json) {
 }
 
 function careerSuccess(json) {
-  var careerHtml = template ({careers: json});
+  var careerHtml = careerProfile({careers: json});
   $("#career-list").append(careerHtml);
 }
 
