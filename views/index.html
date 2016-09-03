@@ -36,5 +36,29 @@
           <p>Pets: {{pets}}</p>
       </script>
     </div>
+    <h4><a href="/api/profile">API</a></h4>
+    <div class = container>
+      <div class="row">
+        <div class="col-md-8 col-md-offset-2">
+          <h1>Past Professions</h1>
+          <div id="career-list" class="careerList">
+            <script id="career-template" type="text/x-handlebars-template">
+              {{#each careers}}
+                <div class="jobTitle">
+                  <h2>{{jobTitle}}</h2>
+                <div class="company">
+                  <p>{{{company}}}</p>
+                <div class="accomplishment">
+                  <p>{{accomplishment}}</p>
+                </div>
+                </div>
+                </div>
+              {{/each}}
+            </script>
+          </div>
+        </div>
+      </div>
+    </div>
+    <h4><a href="/api/careers">API</a></h4>
   </body>
 </html>
