@@ -26,19 +26,17 @@
         </div>
       </div>
     </div>
-    <ul id="profile" class="profile-info">
+    <div id="profile" class="profileInfo">
       <script id="profile-template" type="text/x-handlebars-template">
-        {{#each profile}}
       </script>
-           <li class="profile-item">
-             <img src="{{githubProfileImage}}>" alt="Misha LeClair" height="300" width="300">
-             <a href="{{githubLink}}" target="_blank">{{name}}</a>
-             <a href="{{personalSiteLink}}" target="_blank">Portfolio</a>
-             <p>City: {{currentCity}}</p>
-             <p>Pets: {{pets}}</p>
-           </li>
-         {{/each}}
-      </script>
-    </ul>
+        <div class="profileItem">
+          <h2>{{name}}</h2>
+          <img src="{{githubProfileImage}}>" alt="Misha LeClair" height="300" width="300">
+          <a href="{{githubLink}}" target="_blank">GitHub</a>
+          <a href="{{personalSiteLink}}" target="_blank">Portfolio</a>
+          <p>City: {{currentCity}}</p>
+          <p>Pets: {{pets}}</p>
+           </div>
+    </div>
   </body>
 </html>
