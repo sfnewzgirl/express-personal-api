@@ -12,34 +12,18 @@ $(document).ready(function(){
         error: handleError
       });
 });
-//
-// function render () {
-//   $("#profileItem").empty();
-//   var profileHtml = template({
-//     name: json.name,
-//     githubLink: json.githubLink,
-//     githubProfileImage: json.githubProfileImage,
-//     personalSiteLink: json.personalSiteLink,
-//     currentCity: json.currentCity,
-//     pets: json.pets
-//   })
-//    $("#profile").append(profileHtml);
-// };
 
 function onSuccess(json) {
   $("#profileItem").empty();
-  var profileHtml = template({    });
-  // var profileHtml = template({
-  //      name: json,
-  //      githubLink: json,
-  //      githubProfileImage: json,
-  //      personalSiteLink: json,
-  //      currentCity: json,
-  //      pets: json
-  //    })
+  var profileHtml = template({
+    name: json.name,
+    githubLink: json.githubLink,
+    githubProfileImage: json.githubProfileImage,
+    personalSiteLink: json.personalSiteLink,
+    currentCity: json.currentCity,
+    pets: json.pets
+  })
   $("#profile").append(profileHtml);
-  // render ();
-  console.log(json);
 }
 
 function handleError(e) {
