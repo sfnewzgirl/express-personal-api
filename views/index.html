@@ -26,5 +26,15 @@
         </div>
       </div>
     </div>
+    <ul id="careers" class="career-list">
+      <script id="careers-template" type="text/x-handlebars-template">
+        {{#each career}}
+      </script>
+           <li class="career-item">
+             <a href="{{githubLink}}" target="_blank"><strong>{{name}}</strong></a>
+           </li>
+         {{/each}}
+      </script>
+    </ul>
   </body>
 </html>
