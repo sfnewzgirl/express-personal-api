@@ -42,12 +42,24 @@
           <div id="profile" class="profileInfo">
           <script id="profile-template" type="text/x-handlebars-template">
               <h3>About Me</h3>
-              <img src="{{githubProfileImage}}>" alt="Misha LeClair" height="300" width="300">
-              <p class="profile-p">{{name}}</p>
-              <p class="profile-p">Check out my work on Github: </p><a href="{{githubLink}}" target="_blank" id="github-link">here</a>
-              <p class="profile-p">View my portfolio of work: </p><a href="{{personalSiteLink}}" target="_blank" id="personal-link">here</a>
-              <p class="profile-p">City: {{currentCity}}</p>
-              <p class="profile-p">Pets: {{pets}}</p>
+              <div class="col-sm-6 profile-picture">
+                <img src="{{githubProfileImage}}>" alt="Misha LeClair" height="300" width="300">
+              </div>
+              <div class="col-sm-6 profile-section">
+                <p class="profile-p">{{name}}</p>
+                <br>
+                <p class="profile-p">Check out my work on Github: </p>
+                <a class="btn btn-default" href="{{githubLink}}" role="button" id="github-link" target="_blank">Link</a>
+                <!-- <a href="{{githubLink}}" target="_blank" id="github-link">here</a> -->
+                <br>
+                <p class="profile-p">View my portfolio of work: </p>
+                <a class="btn btn-default" href="{{personalSiteLink}}" role="button" id="personal-link" target="_blank">Link</a>
+                <!-- <a href="{{personalSiteLink}}" target="_blank" id="personal-link">here</a> -->
+                <br>
+                <p class="profile-p">City: {{currentCity}}</p>
+                <br>
+                <p class="profile-p">Pets: {{pets}}</p>
+              </div>
               </script>
             </div>
         </div>
