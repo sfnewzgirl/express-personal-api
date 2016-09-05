@@ -30,27 +30,33 @@
     </div>
     <div class="container-fluid">
       <div class="row">
-        <div class="col-md-8 col-md-offset-2">
+        <div class="col-md-12">
           <h1>Misha LeClair's Personal API</h1>
-          <h4><a href="/api">API Documentation</a></h4>
+          <h4>Check Out My API Documentation By Clicking on <a href="/api">API</a> After Each Section</h4>
         </div>
       </div>
     </div>
-    <div id="profile" class="profileInfo">
-      <script id="profile-template" type="text/x-handlebars-template">
-          <h2>{{name}}</h2>
-          <img src="{{githubProfileImage}}>" alt="Misha LeClair" height="300" width="300">
-          <a href="{{githubLink}}" target="_blank">GitHub</a>
-          <a href="{{personalSiteLink}}" target="_blank">Portfolio</a>
-          <p>City: {{currentCity}}</p>
-          <p>Pets: {{pets}}</p>
-      </script>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-8 col-md-offset-2">
+          <div id="profile" class="profileInfo">
+          <script id="profile-template" type="text/x-handlebars-template">
+              <h3>{{name}}</h3>
+              <img src="{{githubProfileImage}}>" alt="Misha LeClair" height="300" width="300">
+              <p>Check out my work on Github: </p><a href="{{githubLink}}" target="_blank">here</a>
+              <p>View my portfolio of work: </p><a href="{{personalSiteLink}}" target="_blank">here</a>
+              <p>City: {{currentCity}}</p>
+              <p>Pets: {{pets}}</p>
+              </script>
+            </div>
+        </div>
+      </div>
     </div>
     <h4><a href="/api/profile">API</a></h4>
     <div class="container-fluid">
       <div class="row">
         <div class="col-md-8 col-md-offset-2">
-          <h2>Past Professions</h2>
+          <h3>Past Professions</h3>
           <form class="form-inline" id="newCareer">
             <div class="form-group">
               <label for="newJobTitle">Job Title</label>

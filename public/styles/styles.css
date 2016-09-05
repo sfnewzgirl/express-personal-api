@@ -27,14 +27,26 @@ body {
   font-family: Helvetica, Arial, sans-serif;
 }
 h1 {
-  margin-top: 100px;
+  margin-top: 20px;
   text-align: center;
+  font-size: 6em;
+  text-shadow: 3px 3px #ffffff;
 }
-h2 {
-
+a {
+  color: #8eb9a8;
+  font-size: 1.5em;
 }
-h1, h2 {
+a:hover {
+    color: #8eb9a8;
+    text-decoration: underline;
+}
+h1, h2, h4 {
   color: #775d6a;
+}
+h3 {
+  background-color: #fefbd0;
+  text-align: center;
+  font-size: 3em;
 }
 h4 {
   text-align: center;
@@ -43,14 +55,26 @@ h4 {
   background-color: #8eb9a8;
   color: #ffffff;
 }
+.saveBtn:hover {
+  background-color: #ffffff;
+  color: #8eb9a8;
+}
 .editBtn {
   background-color: #fefbd0;
   color: #efdac9;
   font-weight: bold;
 }
+.editBtn:hover {
+  background-color: #ffffff;
+  color: #775d6a;
+}
 .deleteBtn {
   background-color: #e3b8b2;
   color: #ffffff;
+}
+.deleteBtn:hover {
+  background-color: #ffffff;
+  color: #e3b8b2
 }
 .form-edit-career {
   display: none;
