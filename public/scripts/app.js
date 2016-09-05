@@ -46,7 +46,7 @@ $(document).ready(function(){
     $('.form-edit-career').show();
   });
 
-  careerList.on('submit', '.saveBtn', function(event) {
+  careerList.on('submit', '.form-edit-career', function(event) {
     event.preventDefault();
     $.ajax({
       method: 'PUT',
