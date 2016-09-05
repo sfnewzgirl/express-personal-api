@@ -33,6 +33,10 @@ h1 {
   text-shadow: 3px 3px #ffffff;
 }
 p {
+  font-size: 1.5em;
+  display: inline-block;
+}
+.profile-p {
   float: right;
 }
 #github-link, #personal-link {
