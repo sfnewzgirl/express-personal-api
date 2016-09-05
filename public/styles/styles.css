@@ -39,6 +39,10 @@ h1 {
 .profile-section {
   float: right;
 }
+#github-link, #personal-link {
+  background-color: #8eb9a8;
+  color: #ffffff;
+}
 p {
   font-size: 1.5em;
 }
