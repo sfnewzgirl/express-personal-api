@@ -41,17 +41,18 @@ $(document).ready(function(){
     });
   });
 
-  // $('#edit-career').on('click', function(event) {
-  //   event.preventDefault();
-  //   $.ajax({
-  //     method: 'PUT',
-  //     url: '/api/careers/:id',
-  //     dataType: 'json',
-  //     data: $(this).serialize(),
-  //     success: editCareerSuccess,
-  //     error: handleError
-  //   })
-  // });
+  careerList.on('click', '.editBtn', function() {
+    event.preventDefault();
+    $('.form-edit-career').show();
+    // $.ajax({
+    //   method: 'PUT',
+    //   url: '/api/careers/'+$(this).attr('data-id'),
+    //   dataType: 'json',
+    //   data: $(this).serialize(),
+    //   success: editCareerSuccess,
+    //   error: handleError
+    // })
+  });
 
   careerList.on('click', '.deleteBtn', function() {
     $.ajax({
