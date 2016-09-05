@@ -32,6 +32,13 @@ h1 {
   font-size: 6em;
   text-shadow: 3px 3px #ffffff;
 }
+p {
+  float: right;
+}
+#github-link, #personal-link {
+  display: inline;
+  float: right;
+}
 a {
   color: #8eb9a8;
   font-size: 1.5em;
