@@ -43,7 +43,7 @@ $(document).ready(function(){
 
   careerList.on('click', '.editBtn', function() {
     event.preventDefault();
-    $('.form-edit-career').show();
+    $('#careerForm'+$(this).attr('data-id')).show();
   });
 
   careerList.on('submit', '.form-edit-career', function(event) {
