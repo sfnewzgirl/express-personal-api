@@ -94,17 +94,32 @@ function newCareerSuccess(json) {
   render();
 }
 
-// function editCareerSuccess(json) {
-//   var career = json;
-//   var careerId = career._id;
-//   for (var i = 0; i < allCareers.length; i++) {
-//     if (allCareers[i]._id === careerId) {
-//       allCareers[i] = career;
-//       break;
-//     }
-//   }
-//   render();
-// };
+function editCareerSuccess(json) {
+  var editedTitle = $('.form-edit-career').title;
+  var editedCompany = $('.form-edit-career').company;
+  var editedAccomplishment = $('.form-edit-career').accomplishment;
+  var editCareerHtml = careerProfile({
+    title: editedTitle,
+    company: editedCompany,
+    accomplishment: editedAccomplishment
+  })
+  $("#career-list").append(editCareerHtml);
+  $('#newCareer').on('submit', function(event) {
+    event.preventDefault();
+//     $('.form-edit-career').hide();
+  // allCareers.push(json);
+  // render();
+  // var career = json;
+  // var careerId = career._id;
+  // for (var i = 0; i < allCareers.length; i++) {
+  //   if (allCareers[i]._id === careerId) {
+  //     allCareers[i] = career;
+  //     break;
+  //   }
+  // }
+  // render();
+  });
+}
 
 function deleteCareerSuccess(json) {
   var career = json;
