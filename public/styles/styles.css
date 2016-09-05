@@ -22,12 +22,8 @@
   height: 270px;
   background-image: url("../images/codeblocks.jpeg");
 }
-/*.header-images {
-  float:left;
-}*/
 body {
-  clear: both;
-  background-color: #ffffff;
+  background-color: #efdac9;
   font-family: Helvetica, Arial, sans-serif;
 }
 h1 {
@@ -37,11 +33,24 @@ h1 {
 h2 {
 
 }
+h1, h2 {
+  color: #775d6a;
+}
 h4 {
   text-align: center;
 }
-#newCareer {
-  background-color: #ffffff;
+.saveBtn {
+  background-color: #8eb9a8;
+  color: #ffffff;
+}
+.editBtn {
+  background-color: #fefbd0;
+  color: #efdac9;
+  font-weight: bold;
+}
+.deleteBtn {
+  background-color: #e3b8b2;
+  color: #ffffff;
 }
 .form-edit-career {
   display: none;
