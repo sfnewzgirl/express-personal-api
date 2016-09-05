@@ -44,14 +44,14 @@ $(document).ready(function(){
   careerList.on('click', '.editBtn', function() {
     event.preventDefault();
     $('.form-edit-career').show();
-    // $.ajax({
-    //   method: 'PUT',
-    //   url: '/api/careers/'+$(this).attr('data-id'),
-    //   dataType: 'json',
-    //   data: $(this).serialize(),
-    //   success: editCareerSuccess,
-    //   error: handleError
-    // })
+    $.ajax({
+      method: 'PUT',
+      url: '/api/careers/'+$(this).attr('data-id'),
+      dataType: 'json',
+      data: $(this).serialize(),
+      success: editCareerSuccess,
+      error: handleError
+    });
   });
 
   careerList.on('click', '.deleteBtn', function() {
