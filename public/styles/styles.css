@@ -71,12 +71,11 @@ h4 {
   color: #8eb9a8;
 }
 .editBtn {
-  background-color: #fefbd0;
-  color: #efdac9;
-  font-weight: bold;
+  background-color: #ffffff;
+  color: #775d6a;
 }
 .editBtn:hover {
-  background-color: #ffffff;
+  background-color: #fefbd0;
   color: #775d6a;
 }
 .deleteBtn {
