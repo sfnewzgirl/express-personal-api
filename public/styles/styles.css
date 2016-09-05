@@ -1,7 +1,34 @@
+.design-block {
+  background-size: 100%;
+  background-size: cover;
+  background-position: center center;
+  vertical-align: top;
+  height: 270px;
+  background-image: url("../images/designblocks.jpeg");
+}
+.create-block {
+  background-size: 100%;
+  background-size: cover;
+  background-position: center center;
+  vertical-align: top;
+  height: 270px;
+  background-image: url("../images/createblocks.jpeg");
+}
+.code-block {
+  background-size: 100%;
+  background-size: cover;
+  background-position: center center;
+  vertical-align: top;
+  height: 270px;
+  background-image: url("../images/codeblocks.jpeg");
+}
+/*.header-images {
+  float:left;
+}*/
 body {
-  color: #333;
+  clear: both;
+  background-color: #ffffff;
   font-family: Helvetica, Arial, sans-serif;
-  background-color: skyblue; /* Sanity Check! */
 }
 h1 {
   margin-top: 100px;
@@ -12,6 +39,9 @@ h2 {
 }
 h4 {
   text-align: center;
+}
+#newCareer {
+  background-color: #ffffff;
 }
 .form-edit-career {
   display: none;
